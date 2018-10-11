@@ -37,7 +37,6 @@ public class method1 {
 		BigDecimal total = new BigDecimal(0);
 
 		for(int i = 0 ; i < redPockets.length ; i++){
-
 			double itemPocket = ((double)redPockets[i]);
 			double eachMoney = itemPocket / MINIFICATION;
 			System.out.println("第" + (i + 1) + "个红包中的金额为：" + eachMoney);
