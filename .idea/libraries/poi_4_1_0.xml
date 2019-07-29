@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="poi-4.1.0">
+    <CLASSES>
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-examples-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-excelant-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-ooxml-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-ooxml-schemas-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/poi-scratchpad-4.1.0.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/lib/junit-4.12.jar!/" />
+      <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/lib/log4j-1.2.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/poi-4.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
