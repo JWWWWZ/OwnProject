@@ -20,10 +20,13 @@
       <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/lib/jaxb-impl-2.3.0.1.jar!/" />
       <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/lib/jaxb-api-2.3.0.jar!/" />
       <root url="jar://F:/ChormDownload/poi-bin-4.1.0-20190412/poi-4.1.0/ooxml-lib/curvesapi-1.06.jar!/" />
+      <root url="jar://F:/POI/org.apache.poi.xwpf.converter.xhtml-1.0.6.jar!/" />
+      <root url="jar://F:/POI/org.apache.poi.xwpf.converter.core-1.0.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.ideaLibSources/poi-4.1.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/org.apache.poi.xwpf.converter.xhtml-1.0.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
