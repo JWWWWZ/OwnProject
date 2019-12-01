@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Description:
@@ -13,73 +15,42 @@ import java.net.URL;
 
 public class test {
 
-	public static void main(String[] args) throws IOException {
-//		Map<String, String> result = new HashMap<>();
-//		result.put(null, "123");
-//
-//
-//		System.out.println("放入");
-//
-//		System.out.println(result.get(null));
+	public static void main(String[] args){
 
+//		String s = "<div class=\"view TRS_UEDITOR trs_paper_default trs_web\"><p align=\"\" style=\";padding: 0px;font-size: 16px;white-space: normal;text-align: justify\">各省、自治区、直辖市人民政府，国务院各部委、各直属机构：</p><p align=\"\" style=\";padding: 0px;font-size: 16px;white-space: normal;text-indent: 2em;text-align: justify\">为加强社会信用体系建设，深入推进“放管服”改革，进一步发挥信用在创新监管机制、提高监管能力和水平方面的基础性作用，更好激发市场主体活力，推动高质量发展，经国务院同意，现提出如下意见。</p><p><br/></p></div>";
+		String s = "<p style=\"margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255);text-indent: 2em\">\n"
+				+ "    国务院总理李克强8月22日上午在人民大会堂会见来华出席中日韩外长会的韩国外长康京和、日本外相河野太郎。\n"
+				+ "</p>\n"
+				+ "<p style=\"text-align:center;margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255)\">\n"
+				+ "    <img src=\"http://www.gov.cn/premier/2019-08/22/5423504/images/be25c3eb8ba3465596ea17d4ce6a9cbd.jpg\" border=\"0\" style=\"border: none;padding: 0px\"/><br/>\n"
+				+ "</p>\n"
+				+ "<p style=\"margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255);text-indent: 2em\">\n"
+				+ "    李克强祝贺中日韩外长会成功举行。他表示，今年是中日韩合作启动20周年。三国地缘相近，人文相通，经济互补性强，合作潜力巨大。在当前世界经济不稳定不确定性继续上升、全球经济贸易下行压力增大背景下，中日韩加强合作不仅有利于自身发展，也将为地区和世界经济发挥“稳定器”和“推进器”作用。中方高度重视中日韩合作，愿同韩方、日方一道，推动三国合作向更高层次迈进。\n"
+				+ "</p>\n"
+				+ "<p style=\"text-align:center;margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255)\">\n"
+				+ "    <img src=\"http://www.gov.cn/premier/2019-08/22/5423504/images/841682cdc5874dedbbd4c6359f79d28c.jpg\" border=\"0\" style=\"border: none;padding: 0px\"/><br/>\n"
+				+ "</p>\n"
+				+ "<p style=\"margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255);text-indent: 2em\">\n"
+				+ "    李克强指出，中日韩合作取得很大发展，重要性和必要性还将进一步凸显。三国应当维护以规则为基础、以世贸组织为核心的多边贸易体制，争取早日达成全面、高水平的中日韩自贸协定，促进贸易和投资自由化便利化。共同推动科技创新，共享发展机遇和创新成果。共同促进发展繁荣，推进东亚合作。共同维护地区和平稳定，为政治解决朝鲜半岛问题、实现半岛无核化和地区持久和平作出积极贡献。密切人员往来，增进人民之间相互了解，夯实三国合作的民意基础。\n"
+				+ "</p>\n"
+				+ "<p style=\"text-align:center;margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255)\">\n"
+				+ "    <img src=\"http://www.gov.cn/premier/2019-08/22/5423504/images/793a5bc661db4f5ab31194c94e55b08c.jpg\" border=\"0\" style=\"border: none;padding: 0px\"/><br/>\n"
+				+ "</p>\n"
+				+ "<p style=\"margin: 15px 0px 0px;padding: 0px;list-style: none;color: rgb(51, 51, 51);font-family: 宋体;font-size: 16px;white-space: normal;background-color: rgb(255, 255, 255);text-indent: 2em\">\n"
+				+ "    康京和表示，此次韩中日三国外长会取得积极成果，对三方下一步合作进行规划。韩方期待年内在华举行的三国领导人会议取得成功，为地区和平稳定与发展作出贡献。韩中关系发展良好，韩方对韩中未来合作充满信心。\n"
+				+ "</p>\n"
+				+ "<p>\n"
+				+ "    <br/>\n"
+				+ "</p>";
+//		String transfer = "各省、自治区、直辖市人民政府，国务院各部委、各直属机构：为加强社会信用体系建设，深入推进“放管服”改革，进一步发挥信用在创新监管机制、提高监管能力和水平方面的基础性作用，更好激发市场主体活力，推动高质量发展，经国务院同意，现提出如下意见。";
+		Pattern pattern = Pattern.compile("<p(.|\\r|\\n)+?<\\/p>");
+		Matcher matcher = pattern.matcher(s);
 
-//		double i = -2.9d;
-//		System.out.println(Math.round(i));
-
-
-//		String a = "1_23_45_";
-//		int i = a.lastIndexOf('_');
-//		if(i + 1 < a.length()){
-//			System.out.println(a.substring(i + 1, a.length()));
-//		}
-
-//		String licenseCode = "IDS@1.Z5G5QPCK-G6BDHC06-1GA8TPK4-PU4AFZDA-0FCCPCYU-AP4AGWAP";
-//		String info = licenseCode.substring(0, licenseCode.indexOf('-'));
-//		System.out.println("info：" + info);
-//		int nodeAmount = info.charAt(1) - '0';
-//		System.out.println("nodeAmount：" + nodeAmount);
-//		char licenseType = info.charAt(0);
-//		System.out.println("licenseType：" + licenseType);
-
-//		String[] items = new String[]{"a", "b", "c"};
-//		List<String> array = new ArrayList<>(Arrays.asList(items));
-//		System.out.println(array);
-//		List<String> item = Arrays.asList(items);
-//		System.out.println(item);
-//		item.contains("a");
-//		System.out.println(item.contains("a"));
-//		String s ="2019-09-12";
-//		String[] s1 = s.split("-");
-//		System.out.println("a");
-
-        for(int i = 0 ; i < 1 ; i ++){
-            test(i);
-        }
-
-	}
-
-	private static void test(int i) throws IOException {
-//		String path = "http://113.207.112.58:81/gov/opendata.do?recId=151&methodname=getPropertyDataByRecId&serviceId=gov_webdocument&currUserName=admin";
-		String path = "http://192.168.200.170/mas/openapi/pages.do?method=exPlay&appKey=gov&id=1741&autoPlay=false";
-		URL url = new URL(path);
-		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-		PrintWriter writer;
-		connection.setRequestProperty("user-agent",
-				"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
-        connection.setDoOutput(true);
-        connection.setDoInput(true);
-		writer = new PrintWriter(connection.getOutputStream());
-		writer.flush();
-		InputStream inputStream = connection.getInputStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
-		String str;
-		String result = "";
-		while((str = br.readLine()) != null){
-			result += str;
+		while(matcher.find()){
+			System.out.println(matcher.group());
 		}
-		br.close();
-		connection.disconnect();
-		System.out.println(i + "、" + result);
+//		System.out.println(s.replaceAll("<p[^>]{1,}>{1}",""));
+//		System.out.println(s.replaceAll("<p{1}[^>]{1,}>{1}.*</p>{1}",""));
 	}
 
 }
