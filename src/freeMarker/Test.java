@@ -43,13 +43,13 @@ public class Test {
 //		dataMap.put("contentontent1", "hello");
 //
 //		/** 指定输出word文件的路径 **/
-//		File f = new File("E://test");
+//		File f = new File("E://word");
 //		if(!f.exists())
 //			f.mkdir();
 //
 //
 //
-//		String outFilePath = f.getCanonicalPath() + "//test.doc";
+//		String outFilePath = f.getCanonicalPath() + "//word.doc";
 //		File docFile = new File(outFilePath);
 //		FileOutputStream fos = new FileOutputStream(docFile);
 //		Writer out = new BufferedWriter(new OutputStreamWriter(fos, "utf-8"),10240);
