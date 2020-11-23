@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jna-4.5.2">
+    <CLASSES>
+      <root url="jar://F:/encryLib/jna-4.5.2.jar!/" />
+      <root url="jar://F:/encryLib/log4j-1.2.17.jar!/" />
+      <root url="jar://F:/encryLib/sdt-cryptohl-1.4.0.0.jar!/" />
+      <root url="jar://F:/encryLib/sdt-sdf4j-0.9.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

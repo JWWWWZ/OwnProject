@@ -1,8 +1,5 @@
 package Future;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  * Description:
  * Copyright: Copyright (c) 2004-2017 TRS信息技术有限公司
@@ -32,16 +29,16 @@ public class TimeTest implements Runnable{
 class Main{
 
 	void test(){
-		Thread t = new Thread(new TimeTest());
-		t.run();
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-				t.interrupt();
-				this.cancel();
-				timer.cancel();
-			}
-		}, 100);
+//		Thread t = new Thread(new TimeTest());
+//		t.run();
+//		Timer timer = new Timer();
+//		timer.schedule(new TimerTask() {
+//			@Override
+//			public void run() {
+//				t.interrupt();
+//				this.cancel();
+//				timer.cancel();
+//			}
+//		}, 100);
 	}
 }

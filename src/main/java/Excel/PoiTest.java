@@ -9,7 +9,6 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
-import org.apache.poi.ss.util.CellRangeAddress;
 
 /**
  * Description:
@@ -38,20 +37,53 @@ public class PoiTest {
 		style.setAlignment(HorizontalAlignment.CENTER);
 		style.setVerticalAlignment(VerticalAlignment.CENTER);
 
-		for(int i = 0 ; i < 65535 ; i++){
+//		for(int i = 0 ; i < 65535 ; i++){
+//
+//			HSSFRow row = sheet.createRow(i);
+//
+//			HSSFCell cell = row.createCell(0);
+//
+//			cell.setCellValue("hello world");
+//
+//			cell.setCellStyle(style);
+//		}
 
-			HSSFRow row = sheet.createRow(i);
+		HSSFRow row = sheet.createRow(0);
 
-			HSSFCell cell = row.createCell(0);
+		HSSFCell cell = row.createCell(0);
 
-			cell.setCellValue("hello world");
+		cell.setCellValue("金牛区");
 
-			cell.setCellStyle(style);
-		}
+		cell.setCellStyle(style);
 
-		CellRangeAddress region = new CellRangeAddress(0, 10, 0, 0);
+		HSSFRow row1 = sheet.createRow(1);
 
-		sheet.addMergedRegion(region);
+		HSSFCell cell1 = row1.createCell(0);
+
+		cell1.setCellValue("高新区");
+
+		cell1.setCellStyle(style);
+
+		HSSFRow row2 = sheet.createRow(2);
+
+		HSSFCell cell2 = row2.createCell(0);
+
+		cell2.setCellValue("金牛区");
+
+		cell2.setCellStyle(style);
+
+		HSSFRow row3 = sheet.createRow(3);
+
+		HSSFCell cell3 = row3.createCell(0);
+
+		cell3.setCellValue("高新区");
+
+		cell3.setCellStyle(style);
+
+
+//		CellRangeAddress region = new CellRangeAddress(0, 10, 0, 0);
+//
+//		sheet.addMergedRegion(region);
 
 		wb.write(out);
 
