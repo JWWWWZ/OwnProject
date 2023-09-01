@@ -11,4 +11,8 @@ public class SepTest1 {
     private void test2(){
         System.out.println("hello2");
     }
+
+    private void test3(){
+        System.out.println("hello3");
+    }
 }
