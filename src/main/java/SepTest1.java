@@ -7,4 +7,8 @@ public class SepTest1 {
     private void test1(){
         System.out.println("hello1");
     }
+
+    private void test2(){
+        System.out.println("hello2");
+    }
 }
