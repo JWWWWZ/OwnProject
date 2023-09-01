@@ -24,4 +24,8 @@ public class SepTest1 {
     private void test5(){
         System.out.println("hello5");
     }
+
+    private void test6(){
+        System.out.println("hello6");
+    }
 }
